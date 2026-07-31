@@ -1,0 +1,40 @@
+/* Variables & Global Design Tokens */
+:root {
+  /* Colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F9FAFB;
+  --bg-card: #FFFFFF;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #9CA3AF;
+  
+  --accent-purple: #8B5CF6;
+  --accent-purple-hover: #7C3AED;
+  --accent-purple-light: #F3E8FF;
+  
+  --btn-dark-bg: #18181B;
+  --btn-dark-hover: #27272A;
+  --btn-dark-text: #FFFFFF;
+  
+  --btn-light-bg: #F3F4F6;
+  --btn-light-hover: #E5E7EB;
+  --btn-light-text: #1F2937;
+  
+  --border-color: #E5E7EB;
+  --border-focus: #8B5CF6;
+
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Shadows & Effects */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Layout & Spacing */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --max-width: 1200px;
+}
