@@ -62,8 +62,8 @@ Karena proyek ini berbasis web statis (Vanilla HTML/CSS/JS), Anda tidak memerluk
 
 1. **Clone atau Unduh Repositori**:
    ```bash
-   git clone https://github.com/username/portofolio.git
-   cd portofolio
+   git clone https://github.com/RayLunaris/Portofolio.git
+   cd Portofolio
    ```
 
 2. **Buka File `index.html`**:
