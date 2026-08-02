@@ -192,6 +192,7 @@ button {
 .highlight-purple {
   background: linear-gradient(135deg, #E6501B 0%, #C3110C 50%, #740A03 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: block;
 }
