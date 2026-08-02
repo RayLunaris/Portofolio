@@ -391,8 +391,10 @@ button {
   color: var(--text-primary);
 }
 
-.category-title svg {
-  color: var(--accent-purple);
+.category-title svg,
+.category-title i {
+  color: var(--accent-primary);
+  font-size: 20px;
   width: 20px;
   height: 20px;
 }
