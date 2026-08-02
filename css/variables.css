@@ -1,39 +1,53 @@
 /* ==========================================================================
    Variables & Global Design Tokens
    Personal Portfolio - Ahmad Rayhan Anrito Pratama
+   Color Theme: Warm Fiery Palette (#280905, #740A03, #C3110C, #E6501B)
    ========================================================================== */
 
 :root {
-  /* Colors - Light Theme */
+  /* Colors - Light Theme based on Warm Palette */
   --bg-primary: #FFFFFF;
-  --bg-secondary: #F9FAFB;
+  --bg-secondary: #FDF9F8;
   --bg-card: #FFFFFF;
-  --bg-header: rgba(255, 255, 255, 0.85);
+  --bg-header: rgba(255, 255, 255, 0.90);
   
-  --text-primary: #111827;
-  --text-secondary: #4B5563;
-  --text-muted: #9CA3AF;
+  /* Text Colors */
+  --text-primary: #280905;
+  --text-secondary: #5A4744;
+  --text-muted: #9E8986;
   
-  /* Primary Accent - Purple / Violet */
-  --accent-purple: #8B5CF6;
-  --accent-purple-hover: #7C3AED;
-  --accent-purple-light: #F3E8FF;
-  --accent-purple-glow: rgba(139, 92, 246, 0.25);
+  /* Palette Tokens from User Image */
+  --color-dark: #280905;
+  --color-maroon: #740A03;
+  --color-crimson: #C3110C;
+  --color-orange: #E6501B;
+
+  /* Primary Accent Colors */
+  --accent-primary: #E6501B;
+  --accent-primary-hover: #C3110C;
+  --accent-primary-light: #FDF1ED;
+  --accent-primary-glow: rgba(230, 80, 27, 0.25);
+
+  /* Legacy variable mapping for full compatibility */
+  --accent-purple: var(--accent-primary);
+  --accent-purple-hover: var(--accent-primary-hover);
+  --accent-purple-light: var(--accent-primary-light);
+  --accent-purple-glow: var(--accent-primary-glow);
   
   /* Button Themes */
-  --btn-dark-bg: #18181B;
-  --btn-dark-hover: #27272A;
+  --btn-dark-bg: #280905;
+  --btn-dark-hover: #740A03;
   --btn-dark-text: #FFFFFF;
   
-  --btn-light-bg: #F3F4F6;
-  --btn-light-hover: #E5E7EB;
-  --btn-light-text: #1F2937;
+  --btn-light-bg: #FDF1ED;
+  --btn-light-hover: #FCE3DB;
+  --btn-light-text: #280905;
   
   /* Form & Status */
-  --border-color: #E5E7EB;
-  --border-focus: #8B5CF6;
-  --error-color: #EF4444;
-  --error-bg: #FEF2F2;
+  --border-color: #F2E5E2;
+  --border-focus: #E6501B;
+  --error-color: #C3110C;
+  --error-bg: #FDF1ED;
   --success-color: #10B981;
   --success-bg: #ECFDF5;
 
@@ -41,10 +55,10 @@
   --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   
   /* Shadows & Glassmorphism */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
-  --shadow-glow: 0 12px 30px -5px rgba(139, 92, 246, 0.3);
+  --shadow-sm: 0 2px 4px rgba(40, 9, 5, 0.04);
+  --shadow-md: 0 4px 12px -2px rgba(40, 9, 5, 0.08);
+  --shadow-lg: 0 12px 28px -6px rgba(40, 9, 5, 0.12);
+  --shadow-glow: 0 12px 30px -5px rgba(230, 80, 27, 0.35);
   --backdrop-blur: blur(12px);
   
   /* Layout & Spacing */

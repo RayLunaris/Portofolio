@@ -190,7 +190,9 @@ button {
 }
 
 .highlight-purple {
-  color: var(--accent-purple);
+  background: linear-gradient(135deg, #E6501B 0%, #C3110C 50%, #740A03 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: block;
 }
 
@@ -257,15 +259,17 @@ button {
   height: 380px;
   border-radius: 50%;
   padding: 24px;
-  border: 1.5px solid rgba(139, 92, 246, 0.35);
+  border: 2px solid rgba(230, 80, 27, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgba(230, 80, 27, 0.12);
 }
 
 .profile-ring:hover {
-  border-color: rgba(139, 92, 246, 0.75);
+  border-color: rgba(230, 80, 27, 0.8);
+  box-shadow: 0 0 40px rgba(230, 80, 27, 0.25);
 }
 
 .profile-img {
@@ -280,7 +284,6 @@ button {
 .about-section,
 .skills-section,
 .projects-section,
-.testimonials-section,
 .contact-section {
   padding: 6rem 0;
 }
@@ -291,8 +294,7 @@ button {
   background-color: #FFFFFF;
 }
 
-.skills-section,
-.testimonials-section {
+.skills-section {
   background-color: var(--bg-secondary);
 }
 
@@ -420,7 +422,11 @@ button {
 .skill-icon {
   width: 18px;
   height: 18px;
+  font-size: 18px;
   color: var(--accent-purple);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skill-name {
@@ -449,7 +455,7 @@ button {
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(139, 92, 246, 0.3);
+  border-color: rgba(230, 80, 27, 0.4);
 }
 
 .project-image-wrapper {
@@ -533,51 +539,11 @@ button {
   height: 16px;
 }
 
-/* TESTIMONIALS SECTION STYLES */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+.btn-link i {
+  font-size: 16px;
 }
 
-.testimonial-card {
-  background-color: #FFFFFF;
-  padding: 2.25rem;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
-.testimonial-quote {
-  font-size: 1.05rem;
-  color: var(--text-primary);
-  line-height: 1.7;
-  font-style: italic;
-  margin-bottom: 1.75rem;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-style: normal;
-}
-
-.author-name {
-  display: block;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.author-role {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-}
 
 /* CONTACT SECTION STYLES */
 .contact-grid {
@@ -662,31 +628,108 @@ button {
 .social-icons {
   display: flex;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .social-icon-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 12px;
   color: var(--text-primary);
-  transition: all 0.2s ease;
+  font-size: 1.15rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.social-icon-link svg,
+.social-icon-link i {
+  width: 20px;
+  height: 20px;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-icon-link:hover {
-  background-color: var(--accent-purple);
+  background-color: var(--accent-primary);
   color: #FFFFFF;
-  border-color: var(--accent-purple);
-  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(230, 80, 27, 0.25);
 }
 
-.social-icon-link svg {
-  width: 18px;
-  height: 18px;
+/* Brand specific hover effects */
+.social-icon-link.github:hover,
+.footer-social-icon.github:hover {
+  background-color: #24292e;
+  color: #FFFFFF;
+  border-color: #24292e;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(36, 41, 46, 0.25);
+}
+
+.social-icon-link.linkedin:hover,
+.footer-social-icon.linkedin:hover {
+  background-color: #0A66C2;
+  color: #FFFFFF;
+  border-color: #0A66C2;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.25);
+}
+
+.social-icon-link.instagram:hover,
+.footer-social-icon.instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #FFFFFF;
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.3);
+}
+
+.social-icon-link.twitter:hover,
+.footer-social-icon.twitter:hover {
+  background-color: #0f1419;
+  color: #FFFFFF;
+  border-color: #0f1419;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(15, 20, 25, 0.25);
+}
+
+.social-icon-link.whatsapp:hover,
+.footer-social-icon.whatsapp:hover {
+  background-color: #25D366;
+  color: #FFFFFF;
+  border-color: #25D366;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+/* Hero Social Links */
+.hero-social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.hero-social-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Detail Icon WhatsApp */
+.detail-icon.whatsapp-icon {
+  color: #25D366;
+  font-size: 1.35rem;
 }
 
 /* Contact Form */
@@ -734,8 +777,8 @@ button {
 }
 
 .form-input:focus {
-  border-color: var(--accent-purple);
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(230, 80, 27, 0.15);
   background-color: #FFFFFF;
 }
 
@@ -755,11 +798,37 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
 }
 
 .copyright {
   font-size: 0.9rem;
   color: var(--text-secondary);
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.footer-social-icon i {
+  font-size: 1.05rem;
 }
 
 .back-to-top {
