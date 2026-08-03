@@ -20,10 +20,10 @@
   <meta property="og:image" content="assets/images/Profil.webp">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Google Fonts: Syne, Playfair Display & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap"
     rel="stylesheet">
 
   <!-- Lucide Icons CDN -->
@@ -37,6 +37,7 @@
   <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/worklog.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 
@@ -54,6 +55,7 @@
         <ul class="nav-list">
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#work-log" class="nav-link">Work Log</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -338,6 +340,143 @@
       </div>
     </section>
 
+    <!-- WORK LOG / BEHIND THE SCENES SECTION -->
+    <section id="work-log" class="worklog-section" aria-label="Behind the Scenes and Project Work Log">
+      <div class="worklog-container">
+        <!-- Section Header -->
+        <div class="worklog-header">
+          <span class="worklog-subtitle">DOCUMENTATION &amp; PROCESS</span>
+          <h2 class="worklog-title">BEHIND THE PROCESS &amp; WORK LOG</h2>
+          <p class="worklog-description">
+            Transparansi alur kerja dari tahap konseptual dan sketsa awal hingga eksekusi akhir yang matang dan responsif. Setiap catatan mendokumentasikan keputusan desain, optimalisasi performa, serta standar kualitas High-End Editorial.
+          </p>
+        </div>
+
+        <!-- Interactive Filter Tabs -->
+        <div class="worklog-filter-wrapper">
+          <div class="worklog-filter-tabs" role="tablist" aria-label="Filter Kategori Work Log">
+            <button type="button" class="worklog-tab-btn active" data-filter="all" role="tab" aria-selected="true">
+              <span>ALL</span>
+            </button>
+            <button type="button" class="worklog-tab-btn" data-filter="in-progress" role="tab" aria-selected="false">
+              <span>IN PROGRESS 🟢</span>
+            </button>
+            <button type="button" class="worklog-tab-btn" data-filter="research" role="tab" aria-selected="false">
+              <span>RESEARCH 🟡</span>
+            </button>
+            <button type="button" class="worklog-tab-btn" data-filter="final-polish" role="tab" aria-selected="false">
+              <span>FINAL POLISH ⚪</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3-Column Chronological Work Log Grid -->
+        <div class="worklog-grid">
+          <!-- Card 1: Frontend Development — SIPENA -->
+          <article class="worklog-card" data-category="in-progress"
+            data-title="Frontend Development — SIPENA (Sistem Informasi Penilaian Akademik)"
+            data-date="PROJECT LOG 01 — FRONTEND ARCHITECTURE"
+            data-badge="&lt;span class='status-pill in-progress'&gt;In Progress 🟢&lt;/span&gt;"
+            data-image="assets/images/worklog/frontend-sipena.jpg"
+            data-detail="SIPENA adalah singkatan dari Sistem Informasi Penilaian Akademik yang dirancang khusus untuk mewujudkan efisiensi, akurasi, dan transparansi dalam pengelolaan data akademik sekolah. Pada aspek Frontend Development, fokus utama difokuskan pada perancangan tata letak yang super responsif, ringan, dan ergonomis. Antarmuka dibangun agar guru dapat dengan mudah memasukkan nilai, mengelola komponen bobot evaluasi, dan menampilkan tabel rekapitulasi nilai siswa secara akurat tanpa kendala performa maupun latensi.">
+            
+            <div class="worklog-card-header">
+              <span class="worklog-date">PROJECT LOG 01 — FRONTEND</span>
+              <span class="status-pill in-progress">In Progress 🟢</span>
+            </div>
+
+            <div class="worklog-media-container js-worklog-modal-trigger">
+              <img src="assets/images/worklog/frontend-sipena.jpg" alt="Frontend Development — SIPENA" class="worklog-media-img" loading="lazy" width="600" height="400">
+              <div class="media-hover-overlay">
+                <span class="hover-zoom-pill"><i data-lucide="zoom-in"></i> Zoom Photo</span>
+              </div>
+            </div>
+
+            <div class="worklog-card-body">
+              <div class="worklog-card-text">
+                <h3 class="worklog-card-title">Frontend Development — SIPENA</h3>
+                <p class="worklog-narrative">
+                  Pengembangan antarmuka web interaktif dan responsif untuk SIPENA (Sistem Informasi Penilaian Akademik) guna mempermudah pengelolaan nilai dan evaluasi belajar.
+                </p>
+              </div>
+              <button type="button" class="worklog-action-btn js-worklog-modal-trigger" aria-label="Inspect Log Frontend Development SIPENA">
+                <span>Inspect Log / Zoom Photo</span>
+                <i data-lucide="maximize-2"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2: UI/UX Research & Design — SIPENA -->
+          <article class="worklog-card" data-category="research"
+            data-title="UI/UX Research &amp; Design — SIPENA (Sistem Informasi Penilaian Akademik)"
+            data-date="PROJECT LOG 02 — UI/UX RESEARCH"
+            data-badge="&lt;span class='status-pill research'&gt;Research 🟡&lt;/span&gt;"
+            data-image="assets/images/worklog/uiux-sipena.jpg"
+            data-detail="Dalam pengembangan SIPENA (Sistem Informasi Penilaian Akademik), penelitian pengalaman pengguna (UX Research) dan perancangan antarmuka (UI Design) memegang peran vital. Wireframe dan prototipe interaktif dirancang di Figma dengan menganalisis kebiasaan tenaga pendidik serta administrator sekolah. Setiap komponen UI — mulai dari hierarki navigasi, pemetaan mata pelajaran, hingga lembar nilai — distandarisasi dengan kontras warna editorial yang nyaman di mata dan kepatuhan standar aksesibilitas agar seluruh alur kerja akademik terasa mulus dan intuitif.">
+            
+            <div class="worklog-card-header">
+              <span class="worklog-date">PROJECT LOG 02 — UI/UX</span>
+              <span class="status-pill research">Research 🟡</span>
+            </div>
+
+            <div class="worklog-media-container js-worklog-modal-trigger">
+              <img src="assets/images/worklog/uiux-sipena.jpg" alt="UI/UX Research &amp; Design — SIPENA" class="worklog-media-img" loading="lazy" width="600" height="400">
+              <div class="media-hover-overlay">
+                <span class="hover-zoom-pill"><i data-lucide="zoom-in"></i> Zoom Photo</span>
+              </div>
+            </div>
+
+            <div class="worklog-card-body">
+              <div class="worklog-card-text">
+                <h3 class="worklog-card-title">UI/UX Research &amp; Design — SIPENA</h3>
+                <p class="worklog-narrative">
+                  Perancangan tata letak interaktif, wireframe, dan alur navigasi intuitif untuk dasbor Sistem Informasi Penilaian Akademik berbasis Figma.
+                </p>
+              </div>
+              <button type="button" class="worklog-action-btn js-worklog-modal-trigger" aria-label="Inspect Log UI UX Design SIPENA">
+                <span>Inspect Log / Zoom Photo</span>
+                <i data-lucide="maximize-2"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3: Fullstack Web System — UMKM Salon -->
+          <article class="worklog-card" data-category="final-polish"
+            data-title="Fullstack Web System — Katalog &amp; Booking UMKM Salon"
+            data-date="PROJECT LOG 03 — LARAVEL &amp; MYSQL"
+            data-badge="&lt;span class='status-pill final-polish'&gt;Final Polish ⚪&lt;/span&gt;"
+            data-image="assets/images/worklog/web-umkm-salon.jpg"
+            data-detail="Proyek transformasi digital untuk UMKM Salon ini dikembangkan sebagai aplikasi web fullstack yang robust menggunakan bahasa pemrograman PHP, framework Laravel, dan sistem manajemen basis data relasional MySQL. Web ini menghadirkan katalog layanan perawatan rambut &amp; kecantikan interaktif, estimasi harga transparan, serta sistem reservasi (booking online) terintegrasi. Di sisi backend, struktur MySQL dioptimalkan dengan relasi antar tabel (layanan, pelanggan, jadwal, dan transaksi), sementara antarmuka pengguna dihadirkan dengan estetika modern bergaya editorial.">
+            
+            <div class="worklog-card-header">
+              <span class="worklog-date">PROJECT LOG 03 — LARAVEL</span>
+              <span class="status-pill final-polish">Final Polish ⚪</span>
+            </div>
+
+            <div class="worklog-media-container js-worklog-modal-trigger">
+              <img src="assets/images/worklog/web-umkm-salon.jpg" alt="Fullstack Web System — UMKM Salon" class="worklog-media-img" loading="lazy" width="600" height="400">
+              <div class="media-hover-overlay">
+                <span class="hover-zoom-pill"><i data-lucide="zoom-in"></i> Zoom Photo</span>
+              </div>
+            </div>
+
+            <div class="worklog-card-body">
+              <div class="worklog-card-text">
+                <h3 class="worklog-card-title">Web UMKM Salon (PHP, Laravel, MySQL)</h3>
+                <p class="worklog-narrative">
+                  Pengembangan aplikasi web katalog layanan dan sistem reservasi online untuk UMKM Salon menggunakan PHP, Laravel, dan MySQL.
+                </p>
+              </div>
+              <button type="button" class="worklog-action-btn js-worklog-modal-trigger" aria-label="Inspect Log Web UMKM Salon">
+                <span>Inspect Log / Zoom Photo</span>
+                <i data-lucide="maximize-2"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section" aria-label="Formulir Kontak">
@@ -437,6 +576,40 @@
       </div>
     </section>
 
+    <!-- LIGHTBOX ZOOM MODAL (OVERLAY FULLSCREEN) -->
+    <div id="worklog-modal" class="worklog-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="worklog-modal-title">
+      <div class="worklog-modal-container">
+        <button type="button" class="worklog-modal-close" id="worklog-modal-close" aria-label="Tutup Modal Lightbox">✕</button>
+        
+        <div class="worklog-modal-media">
+          <img id="worklog-modal-img" src="" alt="Detail Preview Work Log" class="worklog-modal-img">
+        </div>
+
+        <div class="worklog-modal-content">
+          <div>
+            <div class="worklog-modal-header">
+              <div class="worklog-modal-meta">
+                <span id="worklog-modal-date" class="worklog-modal-date"></span>
+                <span id="worklog-modal-badge"></span>
+              </div>
+              <h3 id="worklog-modal-title" class="worklog-modal-title"></h3>
+              <div class="worklog-modal-divider"></div>
+            </div>
+
+            <div class="worklog-modal-body">
+              <h4>WORKFLOW &amp; DESIGN RATIONALE</h4>
+              <p id="worklog-modal-desc" class="worklog-modal-description"></p>
+            </div>
+          </div>
+
+          <div class="worklog-modal-footer">
+            <span class="worklog-modal-badge">High-End Editorial Documentation</span>
+            <span class="worklog-modal-badge">Press ESC to close</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- ==================== FOOTER ==================== -->
@@ -479,6 +652,7 @@
   <script src="js/interactive.js"></script>
   <script src="js/main.js"></script>
   <script src="js/form-validation.js"></script>
+  <script src="js/worklog.js"></script>
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();

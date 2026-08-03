@@ -1,0 +1,621 @@
+/* ==========================================================================
+   WORK LOG SECTION - HIGH-END EDITORIAL MINIMALIST
+   Personal Portfolio - Ahmad Rayhan Anrito Pratama
+   Modular CSS for Behind the Scenes / Project Work Log & Lightbox Modal
+   ========================================================================== */
+
+/* --- 1. SECTION BACKGROUND & EDITORIAL GRID --- */
+.worklog-section {
+  position: relative;
+  background-color: #E8E6E1; /* Warm Light Gray / Cream (#E8E6E1) */
+  background-image: 
+    linear-gradient(to right, rgba(13, 13, 13, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 13, 13, 0.06) 1px, transparent 1px);
+  background-size: 80px 80px;
+  padding: 110px 0 120px;
+  overflow: hidden;
+  color: var(--text-primary);
+  border-top: 1px solid rgba(13, 13, 13, 0.08);
+  border-bottom: 1px solid rgba(13, 13, 13, 0.08);
+}
+
+/* Decorative grid line accents */
+.worklog-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 1px;
+  height: 100%;
+  background: rgba(13, 13, 13, 0.08);
+  pointer-events: none;
+}
+
+.worklog-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 10%;
+  width: 1px;
+  height: 100%;
+  background: rgba(13, 13, 13, 0.08);
+  pointer-events: none;
+}
+
+.worklog-container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- 2. EDITORIAL SECTION HEADER --- */
+.worklog-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 56px;
+  position: relative;
+}
+
+.worklog-subtitle {
+  display: inline-block;
+  font-family: var(--font-family, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #E6501B;
+  margin-bottom: 14px;
+  padding: 6px 16px;
+  background: rgba(230, 80, 27, 0.08);
+  border: 1px solid rgba(230, 80, 27, 0.2);
+  border-radius: var(--radius-full, 9999px);
+}
+
+.worklog-title {
+  font-family: 'Syne', 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #1A1A1A;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.worklog-description {
+  font-family: var(--font-family, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.7;
+  color: #4A4643;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+/* --- 3. INTERACTIVE FILTER TABS --- */
+.worklog-filter-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.worklog-filter-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 8px;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid rgba(13, 13, 13, 0.1);
+  box-shadow: 0 4px 20px rgba(13, 13, 13, 0.04);
+}
+
+.worklog-tab-btn {
+  font-family: var(--font-family, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4A4643;
+  background: transparent;
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius-full, 9999px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  outline: none;
+}
+
+.worklog-tab-btn:hover {
+  color: #1A1A1A;
+  background: rgba(13, 13, 13, 0.06);
+  transform: translateY(-1px);
+}
+
+.worklog-tab-btn.active {
+  color: #FFFFFF;
+  background: #1A1A1A;
+  box-shadow: 0 4px 14px rgba(26, 26, 26, 0.25);
+  transform: translateY(-1px);
+}
+
+/* --- 4. 3-COLUMN CHRONOLOGICAL WORK LOG GRID --- */
+.worklog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* --- 5. GLASSMORPHISM WORK LOG CARD --- */
+.worklog-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(13, 13, 13, 0.1);
+  border-radius: var(--radius-lg, 20px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s ease,
+              opacity 0.4s ease;
+  box-shadow: 0 10px 30px -10px rgba(13, 13, 13, 0.07);
+  position: relative;
+}
+
+.worklog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(13, 13, 13, 0.14);
+  border-color: rgba(230, 80, 27, 0.35);
+}
+
+.worklog-card.is-hidden {
+  display: none !important;
+}
+
+/* Card Header (Date & Status Pill Badge) */
+.worklog-card-header {
+  padding: 22px 24px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(13, 13, 13, 0.06);
+}
+
+.worklog-date {
+  font-family: var(--font-family, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #5A544F;
+  text-transform: uppercase;
+}
+
+/* Status Pill Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-full, 9999px);
+  white-space: nowrap;
+}
+
+.status-pill.in-progress {
+  background-color: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #10B981;
+}
+
+.status-pill.research {
+  background-color: #FFFBEB;
+  color: #92400E;
+  border: 1px solid #F59E0B;
+}
+
+.status-pill.final-polish {
+  background-color: #F8FAFC;
+  color: #334155;
+  border: 1px solid #94A3B8;
+}
+
+/* Media Preview Container & Hover Zoom */
+.worklog-media-container {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background-color: #F5F4F0;
+  border-bottom: 1px solid rgba(13, 13, 13, 0.06);
+  cursor: pointer;
+}
+
+.worklog-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  display: block;
+}
+
+.worklog-media-container:hover .worklog-media-img {
+  transform: scale(1.08);
+}
+
+/* Media Hover Overlay Hint */
+.media-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.worklog-media-container:hover .media-hover-overlay {
+  opacity: 1;
+}
+
+.hover-zoom-pill {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1A1A1A;
+  padding: 8px 18px;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateY(10px);
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.worklog-media-container:hover .hover-zoom-pill {
+  transform: translateY(0);
+}
+
+/* Card Body & Narrative */
+.worklog-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.worklog-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.worklog-card-title {
+  font-family: 'Syne', 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #1A1A1A;
+}
+
+.worklog-narrative {
+  font-family: var(--font-family, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: #4A4643;
+}
+
+/* Hover Action Button */
+.worklog-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 18px;
+  font-family: var(--font-family, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  background: rgba(13, 13, 13, 0.04);
+  border: 1px solid rgba(13, 13, 13, 0.1);
+  border-radius: var(--radius-md, 12px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+}
+
+.worklog-action-btn:hover {
+  background: #1A1A1A;
+  color: #FFFFFF;
+  border-color: #1A1A1A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 26, 26, 0.15);
+}
+
+.worklog-action-btn i {
+  transition: transform 0.3s ease;
+}
+
+.worklog-action-btn:hover i {
+  transform: scale(1.15);
+}
+
+/* --- 6. LIGHTBOX ZOOM MODAL (OVERLAY FULLSCREEN) --- */
+.worklog-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(13, 13, 13, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.worklog-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.worklog-modal-container {
+  background: #FFFFFF;
+  border-radius: 24px;
+  max-width: 1080px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  transform: scale(0.95) translateY(10px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.worklog-modal-backdrop.is-open .worklog-modal-container {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Close Button "✕" */
+.worklog-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(26, 26, 26, 0.08);
+  border: none;
+  color: #1A1A1A;
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s ease;
+}
+
+.worklog-modal-close:hover {
+  background: #1A1A1A;
+  color: #FFFFFF;
+  transform: rotate(90deg) scale(1.05);
+}
+
+/* Modal Media Section (Left Column) */
+.worklog-modal-media {
+  background: #F3F2EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-right: 1px solid rgba(13, 13, 13, 0.08);
+  min-height: 420px;
+}
+
+.worklog-modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 78vh;
+  padding: 24px;
+}
+
+/* Modal Content & Editorial Story (Right Column) */
+.worklog-modal-content {
+  padding: 44px 38px;
+  overflow-y: auto;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.worklog-modal-header {
+  margin-bottom: 24px;
+}
+
+.worklog-modal-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.worklog-modal-date {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #E6501B;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.worklog-modal-title {
+  font-family: 'Syne', 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #1A1A1A;
+  margin-bottom: 8px;
+}
+
+.worklog-modal-divider {
+  height: 1px;
+  background: rgba(13, 13, 13, 0.1);
+  margin: 20px 0;
+}
+
+.worklog-modal-body h4 {
+  font-family: 'Syne', 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #5A544F;
+  margin-bottom: 12px;
+}
+
+.worklog-modal-description {
+  font-family: var(--font-family, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #33302E;
+  margin-bottom: 24px;
+}
+
+.worklog-modal-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(13, 13, 13, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.worklog-modal-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #5A544F;
+  background: #F3F2EE;
+  padding: 6px 14px;
+  border-radius: var(--radius-full, 9999px);
+}
+
+/* --- 7. RESPONSIVE BREAKPOINTS (100% ADAPTIVE) --- */
+@media screen and (max-width: 1024px) {
+  .worklog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .worklog-modal-container {
+    grid-template-columns: 1fr;
+    max-height: 85vh;
+  }
+
+  .worklog-modal-media {
+    min-height: 280px;
+    max-height: 360px;
+    border-right: none;
+    border-bottom: 1px solid rgba(13, 13, 13, 0.08);
+  }
+
+  .worklog-modal-content {
+    padding: 30px 24px;
+    max-height: calc(85vh - 300px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .worklog-section {
+    padding: 80px 0 90px;
+  }
+
+  .worklog-section::before,
+  .worklog-section::after {
+    display: none;
+  }
+
+  .worklog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .worklog-filter-tabs {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .worklog-tab-btn {
+    padding: 8px 16px;
+    font-size: 0.8125rem;
+  }
+
+  .worklog-modal-close {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .worklog-modal-container {
+    max-height: 92vh;
+  }
+
+  .worklog-modal-content {
+    padding: 24px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .worklog-filter-tabs {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .worklog-tab-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .worklog-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .worklog-media-container {
+    height: 200px;
+  }
+}
