@@ -547,23 +547,23 @@
             <form id="contact-form" class="contact-form" action="#" method="POST" novalidate>
               <div class="form-group">
                 <label for="name">Nama Lengkap <span class="required">*</span></label>
-                <input type="text" id="name" name="name" class="form-input" required placeholder="Masukkan nama Anda">
+                <input type="text" id="name" name="name" class="form-input" required autocomplete="name" placeholder="Masukkan nama Anda">
               </div>
 
               <div class="form-group">
                 <label for="email">Alamat Email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" class="form-input" required placeholder="contoh@email.com">
+                <input type="email" id="email" name="email" class="form-input" required autocomplete="email" placeholder="contoh@email.com">
               </div>
 
               <div class="form-group">
                 <label for="subject">Subjek <span class="required">*</span></label>
-                <input type="text" id="subject" name="subject" class="form-input" required
+                <input type="text" id="subject" name="subject" class="form-input" required autocomplete="off"
                   placeholder="Subjek pesan Anda">
               </div>
 
               <div class="form-group">
                 <label for="message">Pesan <span class="required">*</span></label>
-                <textarea id="message" name="message" class="form-input" rows="5" required
+                <textarea id="message" name="message" class="form-input" rows="5" required autocomplete="off"
                   placeholder="Tuliskan detail proyek atau pertanyaan Anda di sini..."></textarea>
               </div>
 
