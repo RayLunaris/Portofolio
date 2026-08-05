@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ==================== 1. INTERACTIVE 3D TILT & CURSOR SPOTLIGHT ==================== */
   const tiltElements = document.querySelectorAll(
-    '.project-card, .metric-card, .skill-category, .skill-card, .contact-form-container, .profile-ring'
+    '.project-card, .metric-card, .skill-card, .contact-form-container, .profile-ring'
   );
 
   tiltElements.forEach(el => {
