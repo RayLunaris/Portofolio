@@ -118,7 +118,8 @@ button {
   z-index: 10;
 }
 
-.header-contact-btn {
+.header-contact-btn,
+.theme-toggle-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,14 +129,18 @@ button {
   color: #FFFFFF;
   border-radius: 50%;
   transition: transform 0.2s ease, background-color 0.2s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.header-contact-btn:hover {
+.header-contact-btn:hover,
+.theme-toggle-btn:hover {
   background-color: var(--btn-dark-hover);
   transform: scale(1.06);
 }
 
-.header-contact-btn svg {
+.header-contact-btn svg,
+.theme-toggle-btn svg {
   width: 18px;
   height: 18px;
 }
@@ -936,7 +941,7 @@ button {
 }
 
 /* Magnetic Buttons & Links */
-.btn, .social-icon-link, .header-contact-btn, .back-to-top {
+.btn, .social-icon-link, .header-contact-btn, .theme-toggle-btn, .back-to-top {
   will-change: transform;
   transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.25s ease, box-shadow 0.25s ease;
 }

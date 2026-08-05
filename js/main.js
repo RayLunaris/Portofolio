@@ -44,4 +44,43 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Theme Toggle Logic
+  const themeToggle = document.getElementById('theme-toggle');
+  const iconDark = document.querySelector('.theme-icon-dark');
+  const iconLight = document.querySelector('.theme-icon-light');
+
+  // Check saved theme or system preference
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    if (iconDark && iconLight) {
+      iconDark.style.display = 'none';
+      iconLight.style.display = 'inline-block';
+    }
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+
+      if (iconDark && iconLight) {
+        if (newTheme === 'dark') {
+          iconDark.style.display = 'none';
+          iconLight.style.display = 'inline-block';
+        } else {
+          iconDark.style.display = 'inline-block';
+          iconLight.style.display = 'none';
+        }
+      }
+    });
+  }
 });

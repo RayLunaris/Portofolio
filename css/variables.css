@@ -73,3 +73,31 @@
   --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ==========================================================================
+   Dark Theme Overrides
+   ========================================================================== */
+[data-theme="dark"] {
+  --bg-primary: #1A0F0D;
+  --bg-secondary: #261614;
+  --bg-card: #261614;
+  --bg-header: rgba(26, 15, 13, 0.90);
+
+  --text-primary: #FDF9F8;
+  --text-secondary: #D4C5C3;
+  --text-muted: #9E8986;
+
+  --border-color: #3D2623;
+
+  --btn-dark-bg: #FDF1ED;
+  --btn-dark-hover: #FCE3DB;
+  --btn-dark-text: #280905;
+
+  --btn-light-bg: #280905;
+  --btn-light-hover: #740A03;
+  --btn-light-text: #FFFFFF;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 12px 28px -6px rgba(0, 0, 0, 0.8);
+}
